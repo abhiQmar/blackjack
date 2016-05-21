@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: blackjack
+  pool: 5
+  username: root
+  password:
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: blackjack
+  pool: 5
+  username: root
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: test
+  username: root
+  password:

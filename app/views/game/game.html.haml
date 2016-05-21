@@ -1,0 +1,49 @@
+- if @game.winner.present?
+  %h1 
+    %b
+      = @game.winner 
+    has won
+    = form_tag(start_game_index_path, method: :post) do
+      = submit_tag "RE-start", data: { disable_with: "Please wait..." }
+- else
+  Player Actions:
+  %table
+    %tr
+      %td
+        = form_tag(stand_game_index_path, method: :post) do
+          = hidden_field_tag "game_id", @game.id
+          = submit_tag "Stand", data: { disable_with: "Please wait..." }
+      %td
+        = form_tag(hit_game_index_path, method: :post) do
+          = hidden_field_tag "game_id", @game.id
+          = submit_tag "HIT", data: { disable_with: "Please wait..." }
+
+%table{border: "1px solid black;"}
+  %tr
+    %th
+      Dealer Cards:
+    %th
+      Player Cards:
+  %tr
+    %td
+      - @game.dealer_cards.each do |card|
+        = card.value
+    %td
+      - @game.player_cards.each do |card|
+        = card.value
+
+%br
+
+Scores:
+%table{border: "1px solid black;"}
+  %tr
+    %th
+      DEALER:
+    %th
+      Player:
+  %tr
+    %td
+      = @game.dealer_score
+    %td
+      = @game.player_score
+

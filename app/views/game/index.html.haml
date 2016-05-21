@@ -1,0 +1,6 @@
+%h2 Hi
+To start the game press 
+= link_to 'Start', start_game_index_path
+
+= form_tag(start_game_index_path, method: :post) do
+  = submit_tag "Start", data: { disable_with: "Please wait..." }
