@@ -1,28 +1,14 @@
-== README
+== BlackJack
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Rails application where you can play blackJack with the dealer(SYSTEM).
 
-Things you may want to cover:
+All game's data is stored in cards table in the database. Only the dealt cards are stored in database.
 
-* Ruby version
+The class Game handles all the logic in the game. From player's and dealer's score to deciding who is the winner.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There are three API end-points: 
+1. index (to start the game)
+2. hit (blackjack move)
+3. stand (blackjack move)
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
